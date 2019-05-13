@@ -17,6 +17,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     /**
      * loadUserByUsername方法将从users数据库表中查找记录以构建UserDetails用于身份验证的对象。
+     *
      * @param username
      * @return
      * @throws UsernameNotFoundException
@@ -28,7 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() ->
-                        new UsernameNotFoundException("User Not Found with -> username or email : " + username)
+                        new UsernameNotFoundException("没有发现用户，根据 -> username 或着 email : " + username)
                 );
 
         return UserPrinciple.build(user);

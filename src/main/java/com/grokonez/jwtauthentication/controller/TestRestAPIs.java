@@ -5,13 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * /api/test/user- >用户访问已经USER_ROLE或ADMIN_ROLE
- * /api/test/pm- >用户访问已经USER_PM或ADMIN_ROLE
- * /api/test/admin - >用户访问了 ADMIN_ROLE
+ * 测试类
  */
 @RestController
 public class TestRestAPIs {
 
+    /**
+     * {@link PreAuthorize} : 用于指定方法访问控制表达式的注释，该表达式将被评估以决定是否允许方法调用。
+     * @return
+     */
     @GetMapping("/api/test/user")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public String userAccess() {

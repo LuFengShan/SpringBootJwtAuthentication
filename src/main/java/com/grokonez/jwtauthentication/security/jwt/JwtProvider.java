@@ -60,10 +60,16 @@ public class JwtProvider {
         return false;
     }
 
+    /**
+     * 从jwt令牌中取得用户的名称
+     * @param token jwt令牌
+     * @return 用户名称
+     */
     public String getUserNameFromJwtToken(String token) {
         return Jwts.parser()
                 .setSigningKey(jwtSecret)
                 .parseClaimsJws(token)
-                .getBody().getSubject();
+                .getBody()
+                .getSubject();
     }
 }

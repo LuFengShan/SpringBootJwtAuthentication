@@ -18,8 +18,11 @@ import com.grokonez.jwtauthentication.security.jwt.JwtAuthEntryPoint;
 import com.grokonez.jwtauthentication.security.jwt.JwtAuthTokenFilter;
 import com.grokonez.jwtauthentication.security.services.UserDetailsServiceImpl;
 
+/**
+ * {@link EnableWebSecurity} : 用于在项目中启用Web安全性,也就是启用@PreFilter，@PreAuthorize，@PostFilter，@PostAuthorize
+ */
 @Configuration
-@EnableWebSecurity //用于在项目中启用Web安全性。
+@EnableWebSecurity //。
 @EnableGlobalMethodSecurity( //用于启用Spring Security全局方法安全性。
         prePostEnabled = true
 )

@@ -59,6 +59,12 @@ public class AuthRestAPIs {
     @Autowired
     JwtProvider jwtProvider;
 
+    /**
+     * 登录
+     *
+     * @param loginRequest 登录信息的代理对象
+     * @return
+     */
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
 
@@ -75,6 +81,12 @@ public class AuthRestAPIs {
         return ResponseEntity.ok(new JwtResponse(jwt));
     }
 
+    /**
+     * 注册
+     *
+     * @param signUpRequest 用户注册信息的代理对象
+     * @return
+     */
     @PostMapping("/signup")
     public ResponseEntity<String> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {

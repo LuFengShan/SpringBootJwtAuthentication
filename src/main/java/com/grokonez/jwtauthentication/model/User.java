@@ -19,6 +19,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
+/**
+ * 用户的实体类
+ */
 @Entity
 @Table(name = "users", uniqueConstraints = { // 指定在创建数据表时，需要创建唯一索引的列
         @UniqueConstraint(columnNames = {

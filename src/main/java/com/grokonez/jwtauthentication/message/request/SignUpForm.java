@@ -4,6 +4,9 @@ import java.util.Set;
 
 import javax.validation.constraints.*;
 
+/**
+ * 代理类，代理用户注册的数据，传送到restapi
+ */
 public class SignUpForm {
     @NotBlank
     @Size(min = 3, max = 50)
